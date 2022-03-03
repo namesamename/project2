@@ -1,3 +1,5 @@
+
+// banner slide
 let banner=$('.banner-slide ul li');
 let prev=$('.prev');
 let next=$('.next');
@@ -65,3 +67,14 @@ next.click(function(){
     leftMove(nextSlide, '100%', 0);
     numPn.addClass('on');
 });
+
+
+
+// news tab
+let tabMenu=$('.board-news');
+function tabsMenu(e){
+    e.preventDefault();
+    let $this=$(this);
+    $this.next('.news-con').show().next('.moreBtn').show().parent('li').addClass('on').siblings('li').removeClass('on').find('>.news-con').hide().find('>.moreBtn').hide();
+}
+tabMenu.find('>ul>li>a').click(tabsMenu);
