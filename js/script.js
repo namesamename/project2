@@ -74,7 +74,6 @@ next.click(function(){
 let tabMenu=$('.board-news');
 function tabsMenu(e){
     e.preventDefault();
-    let $this=$(this);
-    $this.next('.news-con').show().next('.moreBtn').show().parent('li').addClass('on').siblings('li').removeClass('on').find('>.news-con').hide().find('>.moreBtn').hide();
+    $(this).parent('.tab').addClass('on').siblings('.tab').removeClass('on');
 }
-tabMenu.find('>ul>li>a').click(tabsMenu);
+tabMenu.find('.tab>a').click(tabsMenu);
