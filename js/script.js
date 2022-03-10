@@ -29,6 +29,8 @@ function leftMove(tg, start, end){
     tg.css('left',start).stop().animate({left: end},500);
 };
 
+
+// banner btn
 prev.click(function(){
     let prevSlide=banner.eq(current);
     let numP=p.eq(current);
