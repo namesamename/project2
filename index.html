@@ -18,9 +18,11 @@
     <link rel="icon" href="img/resource/favicon.ico">
 
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" href="css/style.css">
     
     <script src="js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="slick/slick.js"></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -89,84 +91,69 @@
             <div class="con-banner cf">
                 <div class="container">
                     <ul class="banner-side">
-                        <li><a href="#">2022 생활발명코리아 모집 공고 홍보</a></li>
-                        <li><a href="#">이원복 교수의 지식재산 웹툰</a></li>
-                        <li><a href="#">모바일 전자고지 안내 시행</a></li>
-                        <li><a href="#">국제특허출원, ePCT로 일원화</a></li>
-                        <li><a href="#">해외지식재산센터 IP-DESK</a></li>
+                        <li index="0"><a href="#">2022 생활발명코리아 모집 공고 홍보</a></li>
+                        <li index="1"><a href="#">이원복 교수의 지식재산 웹툰</a></li>
+                        <li index="4"><a href="#">모바일 전자고지 안내 시행</a></li>
+                        <li index="5"><a href="#">국제특허출원, ePCT로 일원화</a></li>
+                        <li index="7"><a href="#">해외지식재산센터 IP-DESK</a></li>
                     </ul>
                     <div class="banner-slide">
-                        <ul>
-                            <li><a href="#">
-                                <img src="./img/banner/slide01.png" alt="slide1" class="slide">
-                                <img src="./img/mob_banner/m_slide01.png" alt="mobslide1" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide02.png" alt="slide2" class="slide">
-                                <img src="./img/mob_banner/m_slide02.png" alt="mobslide2" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide03.png" alt="slide3" class="slide">
-                                <img src="./img/mob_banner/m_slide03.png" alt="mobslide3" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide04.png" alt="slide4" class="slide">
-                                <img src="./img/mob_banner/m_slide04.png" alt="mobslide4" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide05.png" alt="slide5" class="slide">
-                                <img src="./img/mob_banner/m_slide05.png" alt="mobslide5" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide06.png" alt="slide6" class="slide">
-                                <img src="./img/mob_banner/m_slide06.png" alt="mobslide6" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide07.png" alt="slide7" class="slide">
-                                <img src="./img/mob_banner/m_slide07.png" alt="mobslide7" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide08.png" alt="slide8" class="slide">
-                                <img src="./img/mob_banner/m_slide08.png" alt="mobslide8" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide09.png" alt="slide9" class="slide">
-                                <img src="./img/mob_banner/m_slide09.png" alt="mobslide9" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide10.png" alt="slide10" class="slide">
-                                <img src="./img/mob_banner/m_slide10.png" alt="mobslide10" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide11.png" alt="slide11" class="slide">
-                                <img src="./img/mob_banner/m_slide11.png" alt="mobslide11" class="mob-slide">
-                            </a></li>
-                            <li><a href="#">
-                                <img src="./img/banner/slide12.png" alt="slide12" class="slide">
-                                <img src="./img/mob_banner/m_slide12.png" alt="mobslide12" class="mob-slide">
-                            </a></li>
-                        </ul>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide01.png" alt="slide1" class="slide">
+                            <img src="./img/mob_banner/m_slide01.png" alt="mobslide1" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide02.png" alt="slide2" class="slide">
+                            <img src="./img/mob_banner/m_slide02.png" alt="mobslide2" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide03.png" alt="slide3" class="slide">
+                            <img src="./img/mob_banner/m_slide03.png" alt="mobslide3" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide04.png" alt="slide4" class="slide">
+                            <img src="./img/mob_banner/m_slide04.png" alt="mobslide4" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide05.png" alt="slide5" class="slide">
+                            <img src="./img/mob_banner/m_slide05.png" alt="mobslide5" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide06.png" alt="slide6" class="slide">
+                            <img src="./img/mob_banner/m_slide06.png" alt="mobslide6" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide07.png" alt="slide7" class="slide">
+                            <img src="./img/mob_banner/m_slide07.png" alt="mobslide7" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide08.png" alt="slide8" class="slide">
+                            <img src="./img/mob_banner/m_slide08.png" alt="mobslide8" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide09.png" alt="slide9" class="slide">
+                            <img src="./img/mob_banner/m_slide09.png" alt="mobslide9" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide10.png" alt="slide10" class="slide">
+                            <img src="./img/mob_banner/m_slide10.png" alt="mobslide10" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide11.png" alt="slide11" class="slide">
+                            <img src="./img/mob_banner/m_slide11.png" alt="mobslide11" class="mob-slide">
+                        </a></div>
+                        <div class="slides"><a href="#">
+                            <img src="./img/banner/slide12.png" alt="slide12" class="slide">
+                            <img src="./img/mob_banner/m_slide12.png" alt="mobslide12" class="mob-slide">
+                        </a></div>
                     </div>
                     <div class="banner-btn cf">
                         <div class="arrows">
-                            <div class="prev arrow"></div>
-                            <div class="stopPlay arrow"></div>
-                            <div class="next arrow"></div>
+                            <button type="button" class="prev arrow"></button>
+                            <button type="button" class="stopPlay arrow"></button>
+                            <button type="button" class="next arrow"></button>
                         </div>
-                        <div class="number">
-                            <p class="on">1/12</p>
-                            <p>2/12</p>
-                            <p>3/12</p>
-                            <p>4/12</p>
-                            <p>5/12</p>
-                            <p>6/12</p>
-                            <p>7/12</p>
-                            <p>8/12</p>
-                            <p>9/12</p>
-                            <p>10/12</p>
-                            <p>11/12</p>
-                            <p>12/12</p>
-                        </div>
+                        <button type="button" class="number">1/12</button>
                     </div>
                 </div>
             </div>
@@ -453,7 +440,8 @@
                         <p class="copyright">COPYRIGHT (C) KIPO. All Rights Resved.</p>
                     </div>
                     <div class="footer-mark">
-                        
+                        <a href="#" title="공공누리" class="mark01"></a>
+                        <a href="#" title="웹와치" class="mark02"></a>
                     </div>
                 </div>
             </div>
