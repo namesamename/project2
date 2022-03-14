@@ -1,3 +1,17 @@
+//nav
+let nav=$('.h-b-nav>ul>li');
+nav.each(function(){
+    $(this).hover(function(){
+        $(this).find('>a').addClass('on');
+        $(this).find('.flip').css('display','block');
+    },function(){
+        $(this).find('>a').removeClass('on');
+        $(this).find('.flip').css('display','none');
+    });
+});
+
+
+// banner slick
 $('.banner-slide').slick({
     infinite: true, // 무한여부
     slidesToShow: 1, // 보여질 슬라이드 갯수
