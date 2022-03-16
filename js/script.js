@@ -3,16 +3,21 @@ $('.mob-search').click(function(){
     $('.left-side').addClass('on');
 });
 
-$('.close-btn').click(function(){
+$('.left-side .close-btn').click(function(){
     $('.left-side').removeClass('on');
 });
 
-let on=$('.mob-nav>li>a').filter('.on');
-if(on==true){
-    on.parent().siblings('li').find('>ul').show();
-}else{
-    on.parent().siblings('li').find('>ul').hide();
-};
+$('.mob-menu').click(function(){
+    $('body').css({overflow: 'hidden', position: 'fixed', width: '100%', height: '100%'});
+    $('.right-side').show().animate({right: 0}, 300);
+    $('.right-bg').addClass('on');
+});
+
+$('.right-side .close-btn').click(function(){
+    $('body').css({overflow: 'auto', position: 'static', width: 'auto', height: 'auto'});
+    $('.right-side').hide().animate({right: -320}, 300);
+    $('.right-bg').removeClass('on');
+});
 
 $('.mob-nav>li').each(function(){
     $(this).click(function(){
@@ -22,6 +27,18 @@ $('.mob-nav>li').each(function(){
         $(this).siblings('li').find('>ul').hide();
     });
 });
+
+let on=$('.mob-nav>li>a').filter('.on');
+if(on==true){
+    on.parent().find('>ul').show();
+}else{
+    on.parent().siblings('li').find('>ul').hide();
+};
+
+/* let none=$('.mob-nav>li>a').filter('.none');
+if(none==true){
+    none.removeClass('on');
+}; */
 
 $('.mob-nav>li>ul>li>ul').hide();
 $('.mob-nav>li>ul>li').click(function(e){
@@ -152,7 +169,7 @@ $('.img-tab ul li').each(function(){
 
 
 
-// news tab
+// board tab
 let tabMenu=$('.board-news');
 function tabsMenu(e){
     e.preventDefault();
@@ -162,7 +179,40 @@ tabMenu.find('.tab>a').click(tabsMenu);
 
 
 
+// news slick
+$('.news-slide').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll : 2,
+    arrows : true,
+    dots : false,
+    draggable : true,
+/*     responsive: [ // 반응형 웹 구현 옵션
+    {  
+      breakpoint: 1200, // 화면 사이즈 1200px
+      settings: {width: '100%', paddingLeft: 200},
+      slidesToShow:1 
+    }, { 
+    breakpoint: 768, // 화면 사이즈 768px
+    settings: {	
+      slidesToShow:2 
+      }
+    }
+    ] */
+});
 
+
+
+// link popup
+$('.link-list-t>li').each(function(){
+    $(this).click(function(){
+        $(this).find('.link-trg').show();
+    });
+});
+
+/* $('.trg-close-btn').click(function(){
+    $('.link-trg').hide();
+}); */
 
 
 
