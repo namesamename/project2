@@ -1,3 +1,39 @@
+// mobile
+$('.mob-search').click(function(){
+    $('.left-side').addClass('on');
+});
+
+$('.close-btn').click(function(){
+    $('.left-side').removeClass('on');
+});
+
+let on=$('.mob-nav>li>a').filter('.on');
+if(on==true){
+    on.parent().siblings('li').find('>ul').show();
+}else{
+    on.parent().siblings('li').find('>ul').hide();
+};
+
+$('.mob-nav>li').each(function(){
+    $(this).click(function(){
+        $(this).find('>a').addClass('on');
+        $(this).siblings('li').find('>a').removeClass('on');
+        $(this).find('>ul').show();
+        $(this).siblings('li').find('>ul').hide();
+    });
+});
+
+$('.mob-nav>li>ul>li>ul').hide();
+$('.mob-nav>li>ul>li').click(function(e){
+    // e.priventDefault();
+    $('.mob-nav>li>ul>li>a').removeClass('on');
+    $(this).find('>a').addClass('on');
+    $('.mob-nav>li>ul>li>ul').stop().slideUp();
+    $(this).find('>ul').stop().slideDown();
+});
+
+
+
 //nav
 let nav=$('.h-b-nav>ul>li');
 nav.each(function(){
@@ -9,6 +45,7 @@ nav.each(function(){
         $(this).find('.flip').removeClass('visible');
     });
 });
+
 
 
 // banner slick
@@ -62,20 +99,6 @@ $('.banner-slide').on('afterChange', function(event, slick, currentSlide){
 
 
 // info tab
-
-/* $('.info-btn').each(function(){
-    let b=true;
-    $(this).click(function(){
-        if(b==true){
-            $(this).addClass('on').siblings('.info-btn').removeClass('on');
-            b=false;
-        }else{
-            $(this).removeClass('on');
-            b=true;
-        };
-    });
-}); */
-
 $('.info-wrap').each(function(){
     let infoWrap=$(this);
     let infoBtn=infoWrap.find('.info-btn');
@@ -83,6 +106,7 @@ $('.info-wrap').each(function(){
     let infoTab=infoWrap.find('.info-tab');
     let lastBtn;
     let lastTab;
+    let b=true;
 
     lastBtn=infoBtn.filter('.on');
     lastTab=$(infoBtnA.attr('href'));
@@ -108,10 +132,23 @@ $('.info-wrap').each(function(){
 $('.img-tab ul li').each(function(){
     function imgTabClick(e){
         e.preventDefault();
-        $(this).addClass('on').siblings('li').removeClass('on')
+        $(this).addClass('on').siblings('li').removeClass('on');
     };
     $(this).click(imgTabClick);
 });
+
+/* $('.info-btn').each(function(){
+    let b=true;
+    $(this).click(function(){
+        if(b==true){
+            $(this).addClass('on').siblings('.info-btn').removeClass('on');
+            b=false;
+        }else{
+            $(this).removeClass('on');
+            b=true;
+        };
+    });
+}); */
 
 
 
