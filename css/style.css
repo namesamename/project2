@@ -129,7 +129,7 @@ body{font-size: 16px; letter-spacing: -0.2px; position: static;}
 
 .mob .right-side .mob-nav>li>ul{background: #fff; margin-left: 120px;}
 .mob .right-side .mob-nav>li>ul>li>a{display: block; padding: 15px 10px; color: #333; font-size: 0.95rem; background: url(../img/resource/bg_allM_plus.png) no-repeat right 15px center / 10px;}
-.mob .right-side .mob-nav>li>ul>li>a:not(:last-child){border-bottom: 1px solid #f1f1f1;}
+.mob .right-side .mob-nav>li>ul>li:not(:last-child)>a{border-bottom: 1px solid #f1f1f1;}
 .mob .right-side .mob-nav>li>ul>li>a:hover{color: #0b2266;}
 .mob .right-side .mob-nav>li>ul>li>a.on{color: #0b2266; background: url(../img/resource/bg_allM_min.png) no-repeat right 15px center / 10px;}
 .mob .right-side .mob-nav>li>ul>li>a.none{background: none;}
