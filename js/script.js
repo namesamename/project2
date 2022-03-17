@@ -35,18 +35,17 @@ if(on==true){
     on.parent().siblings('li').find('>ul').hide();
 };
 
-/* let none=$('.mob-nav>li>a').filter('.none');
-if(none==true){
-    none.removeClass('on');
-}; */
-
 $('.mob-nav>li>ul>li>ul').hide();
-$('.mob-nav>li>ul>li').click(function(e){
-    // e.priventDefault();
-    $('.mob-nav>li>ul>li>a').removeClass('on');
-    $(this).find('>a').addClass('on');
-    $('.mob-nav>li>ul>li>ul').stop().slideUp();
-    $(this).find('>ul').stop().slideDown();
+$('.mob-nav>li>ul>li').click(function(){
+    if($(this).find('>a').hasClass('on')){
+        $(this).find('>a').removeClass('on');
+        $('.mob-nav>li>ul>li>ul').stop().slideUp();
+    }else{
+        $('.mob-nav>li>ul>li>a').removeClass('on');
+        $(this).find('>a').addClass('on');
+        $('.mob-nav>li>ul>li>ul').stop().slideUp();
+        $(this).find('>ul').stop().slideDown();
+    };
 });
 
 
@@ -67,29 +66,16 @@ nav.each(function(){
 
 // banner slick
 $('.banner-slide').slick({
-    infinite: true, // 무한여부
-    slidesToShow: 1, // 보여질 슬라이드 갯수
+    slide: 'div',
+    infinite: true,
+    slidesToShow: 1,
     arrows : true,
     prevArrow: $('.prev'),
-    nextArrow: $('.next'), // 화살표 여부
-    dots : false, // 페이지네이션 여부
-    autoplay : true,	// 자동 스크롤 여부
-    autoplaySpeed : 5000, 	// 자동 스크롤 시 넘어가는데 걸리는 시간
-    pauseOnHover : true,	// 마우스 호버하면 슬라이더 멈추는 설정
-    vertical : false,	// 세로 방향 슬라이드 옵션
-    draggable : true, 	// 드래그 가능 여부
-/*     responsive: [ // 반응형 웹 구현 옵션
-    {  
-      breakpoint: 1200, // 화면 사이즈 1200px
-      settings: {width: '100%', paddingLeft: 200},
-      slidesToShow:1 
-    }, { 
-    breakpoint: 768, // 화면 사이즈 768px
-    settings: {	
-      slidesToShow:2 
-      }
-    }
-    ] */
+    nextArrow: $('.next'),
+    autoplay : true,
+    autoplaySpeed : 5000,
+    pauseOnHover : true,
+    draggable : true
 });
 
 $('.banner-side li').click(function() {
@@ -123,7 +109,6 @@ $('.info-wrap').each(function(){
     let infoTab=infoWrap.find('.info-tab');
     let lastBtn;
     let lastTab;
-    let b=true;
 
     lastBtn=infoBtn.filter('.on');
     lastTab=$(infoBtnA.attr('href'));
@@ -136,13 +121,18 @@ $('.info-wrap').each(function(){
         let currentBtnA=$(this).find('>a');
         let currentTab=$(currentBtnA.attr('href'));
 
-        lastBtn.removeClass('on');
-        currentBtn.addClass('on');
+        if(currentBtn.hasClass('on')){
+            currentBtn.removeClass('on');
+            infoTab.hide();
+        }else{
+            lastBtn.removeClass('on');
+            currentBtn.addClass('on');
 
-        lastTab.hide();
-        currentTab.show();
-        lastBtn=currentBtn;
-        lastTab=currentTab;
+            lastTab.hide();
+            currentTab.show();
+            lastBtn=currentBtn;
+            lastTab=currentTab;
+        };
     });
 });
 
@@ -153,19 +143,6 @@ $('.img-tab ul li').each(function(){
     };
     $(this).click(imgTabClick);
 });
-
-/* $('.info-btn').each(function(){
-    let b=true;
-    $(this).click(function(){
-        if(b==true){
-            $(this).addClass('on').siblings('.info-btn').removeClass('on');
-            b=false;
-        }else{
-            $(this).removeClass('on');
-            b=true;
-        };
-    });
-}); */
 
 
 
@@ -181,39 +158,96 @@ tabMenu.find('.tab>a').click(tabsMenu);
 
 // news slick
 $('.news-slide').slick({
+    slide: 'div',
     infinite: true,
     slidesToShow: 4,
     slidesToScroll : 2,
     arrows : true,
-    dots : false,
     draggable : true,
-/*     responsive: [ // 반응형 웹 구현 옵션
-    {  
-      breakpoint: 1200, // 화면 사이즈 1200px
-      settings: {width: '100%', paddingLeft: 200},
-      slidesToShow:1 
-    }, { 
-    breakpoint: 768, // 화면 사이즈 768px
-    settings: {	
-      slidesToShow:2 
-      }
-    }
-    ] */
+    responsive: [
+    {breakpoint: 1100, settings: {slidesToShow: 3}},
+    {breakpoint: 768, settings: {slidesToShow: 3, arrows : false}},
+    {breakpoint: 640, settings: {slidesToShow: 2, arrows : false}},
+    {breakpoint: 500, settings: {slidesToShow: 1, arrows : false}}
+    ]
 });
 
 
 
 // link popup
-$('.link-list-t>li').each(function(){
-    $(this).click(function(){
-        $(this).find('.link-trg').show();
-    });
+$('.link-list>li>a').click(function(){
+    $(this).siblings('.link-trg').show();
 });
 
-/* $('.trg-close-btn').click(function(){
+$('.trg-close-btn').click(function(){
     $('.link-trg').hide();
+});
+
+/* $('.link-list>li>a').each(function(){
+    $(this).on('click',function(e){
+        e.preventDefault();
+        $(this).find('>.link-trg').addClass('on');
+    });
 }); */
 
+/* $('.link-list>li>a').on('click',function(e){
+    e.preventDefault();
+    if($(this).find('>.link-trg').hasClass('on')){
+        $('.trg-close-btn').click(function(){
+            $(this).find('>.link-trg').hide();
+        })
+    }else{
+        $(this).find('>.link-trg').show().addClass('on');
+    }; 
+}); */
+
+/* $('.trg-close-btn').on('click',function(e){
+    e.preventDefault();
+    if($('.link-trg').hasClass('on')){
+        $('.link-trg').removeClass('on');
+    };
+}); */
+
+/* $('.link-list>li').each(function(){
+    $(this).on('click',function(e){
+        e.preventDefault();
+        $(this).find('.link-trg').addClass('on');
+        if($('.link-trg').hasClass('on')){
+            $('.trg-close-btn').click(function(){
+                $('.link-trg').removeClass('on');
+            });
+        };
+    });
+}); */
+
+/* $(this).click(function(){
+    if($('.link-trg').hasClass('on')){
+        $('.trg-close-btn').click(function(){
+            $('.link-trg').removeClass('on');
+        });
+    };
+}); */
+/* $('.trg-close-btn').click(function(){
+    if($('.link-trg').hasClass('on')){
+        $('.link-trg').removeClass('on');
+    };
+}); */
+
+/* $('.trg-close-btn').click(function(){
+    if($('.link-trg').hasClass('on')){
+        $('.link-trg').removeClass('on');
+    };
+}); */
+
+/* if($(this).find('.link-trg').hasClass('on')){
+    $(this).find('.link-trg').removeClass('on');
+}else{
+    $(this).find('.link-trg').addClass('on');
+}; */
+/* $('.trg-close-btn').click(function(){
+    $('.link-trg').removeClass('on');
+});
+ */
 
 
 
