@@ -238,13 +238,16 @@ body{font-size: 16px; letter-spacing: -0.2px; position: static;}
 .news-slide{padding: 0 20px; margin-bottom: 20px; overflow: hidden;}
 .news-slide .slick-slide{margin: 0 10px;}
 .news-slide .slides img{display: block; width: 100%;}
-.news-slide .slides p{width: 100%; height: 124px; background: #fff; border: 1px solid #dfe0e2; padding: 25px; color: #333; font-size: 1rem;}
-.news-slide .slides p span{display: block; width: 100%; height: 42px; font-size: 0.9rem; color: #666; margin-top: 8px;}
+.news-slide .slides p{width: 100%; height: 124px; background: #fff; border: 1px solid #dfe0e2; padding: 25px; color: #333; font-size: 1rem; letter-spacing: -0.2px;}
+.news-slide .slides p span{display: block; width: 100%; height: 42px; font-size: 0.9rem; color: #666; margin-top: 8px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
 
 .news-slide .slick-arrow{width: 19px; height: 19px; position: absolute; top: 46%; font-size: 0; cursor: pointer;}
 .news-slide .slick-arrow:focus{border: 1px solid #777;}
 .news-slide .slick-prev{background: url(../img/resource/slide_prev.png) no-repeat center center; left: 0;}
 .news-slide .slick-next{background: url(../img/resource/slide_next.png) no-repeat center center; right: 0;}
+
+.progress-bar{height: 4px; background: #dedede; margin: 0 30px; overflow: hidden;}
+.progress-bar .bar{width: 0; height: 100%; background: #4e69cc;}
 
 
 /* link */

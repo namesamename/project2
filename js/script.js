@@ -174,6 +174,31 @@ $('.news-slide').slick({
 
 
 
+// news bar
+let bar=$('.progress-bar .bar');
+$('.news-slide').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    let nextC=nextSlide/2;
+    let slideC=(slick.slideCount/2)-1;
+    let barW=(nextC/slideC)*100;
+    // console.log(barW);
+
+    bar.stop().animate({width: barW+'%'},500);
+  });
+
+/* let zero=1;
+$('.news-slide .slick-next').click(function(){
+    let count=zero++;
+    let barWidth=(100/8)*count;
+
+    if(barWidth>100){
+        count=0;
+        $('.progress-bar .bar').stop().animate({width: 0+'%'},500);
+    }else{
+        $('.progress-bar .bar').stop().animate({width: barWidth+'%'},500);
+    };
+}); */
+
+
 // link popup
 $('.link-list>li>a').click(function(){
     $(this).siblings('.link-trg').show();
