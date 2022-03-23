@@ -296,7 +296,7 @@ body{font-size: 16px; letter-spacing: -0.2px; position: static;}
 
 
 .footer-b{padding: 20px 0; overflow: hidden;}
-.footer-b .logo{width: 128px; height: 48px; background: url(../img/resource/kipo_logo3.png) no-repeat; margin-left: 15px; display: inline-block; text-indent: -9999rem;}
+.footer-b .logo{width: 128px; height: 48px; background: url(../img/resource/kipo_logo3.png) no-repeat; margin-left: 15px; display: inline-block;}
 .footer-info{margin-left: 25px; display: inline-block; position: relative;}
 .footer-info p{color: #a9adb9; font-size: 0.85rem; line-height: 1.5;}
 .footer-info p span{display: block;}
