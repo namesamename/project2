@@ -79,7 +79,7 @@ $('.banner-slide').slick({
 });
 
 $('.banner-side li').click(function() {
-    var slideNo = $(this).attr('index');
+    var slideNo = $(this).attr('data-index');
     $('.banner-slide').slick('slickGoTo', slideNo);
 });
 
